@@ -2,6 +2,9 @@
 
 
 def chech_horisontally(board: list[str]) -> bool:
+    """
+    Checks if numbers in the row are not repeating
+    """
     for i in board:
         for j in i:
             if j.isnumeric() and i.count(j) > 1:
@@ -24,14 +27,14 @@ def validate_board(board: list[str]) -> bool:
     False
     """
     board = [[*i] for i in board]
-    
+
     flipped_board = []
     for i in range(len(board)):
         line = []
         for j in board:
             line.append(j[i])
         flipped_board.append(line)
-    
+
     if chech_horisontally(board) or chech_horisontally(flipped_board):
         return False
 
@@ -51,3 +54,4 @@ def validate_board(board: list[str]) -> bool:
                 elems += item
             if elems.count(item) > 1:
                 return False
+    return True
