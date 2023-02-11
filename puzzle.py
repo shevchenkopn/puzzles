@@ -13,6 +13,7 @@ def chech_horisontally(board: list[str]) -> bool:
 
 def validate_board(board: list[str]) -> bool:
     """
+    Validates board
     >>> board = [\
 "**** ****",\
 "***1 ****",\
